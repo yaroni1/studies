@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>בחירת קורסי לימוד לתלמידי תואר שני והשלמות בחוג למערכות מידע בשנת תשפ&quot;ז</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222; }
+  main { max-width: 1000px; margin: 32px auto; padding: 0 16px 40px; }
+  .card { background: white; border: 1px solid #ddd; border-radius: 10px; padding: 20px; }
+  h1 { margin-top: 0; font-size: 28px; }
+  .instructions { margin-bottom: 16px; }
+  .semester-heading { margin: 26px 0 12px; padding: 10px 12px; background: #f1f3f5; border-radius: 8px; font-size: 22px; }
+
+
+  .intro { line-height: 1.7; margin-bottom: 24px; }
+  .intro p { margin: 0 0 10px; }
+  .intro a { overflow-wrap: anywhere; }
+  .required-fields { margin: 24px 0; padding: 18px; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; }
+  .field { margin-bottom: 18px; }
+  .field:last-child { margin-bottom: 0; }
+  .field label { display: block; font-weight: bold; margin-bottom: 7px; }
+  .field input, .field select { width: 100%; box-sizing: border-box; padding: 10px 12px; font-size: 16px; border: 1px solid #bbb; border-radius: 6px; background: #fff; }
+  .help-text { margin: -2px 0 8px; color: #555; font-size: 14px; }
+  .choice-field { border: 0; padding: 0; margin-inline: 0; }
+  .choice-field legend { font-weight: bold; margin-bottom: 8px; padding: 0; }
+  .choice { display: flex !important; align-items: center; gap: 8px; font-weight: normal !important; margin: 8px 0; cursor: pointer; }
+  .choice input { width: auto; margin: 0; }
+  .details-textarea { display: block; min-height: 95px; margin-top: 0; border: 1px solid #bbb; border-radius: 6px; font-size: 16px; }
+  .required-mark { color: #b00020; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; align-items: center; }
+  input[type="search"] { flex: 1; min-width: 240px; padding: 10px 12px; font-size: 16px; border: 1px solid #bbb; border-radius: 6px; }
+  button { padding: 9px 14px; font-size: 15px; cursor: pointer; border: 1px solid #aaa; border-radius: 6px; background: #fff; }
+  .count { margin: 8px 0 14px; font-weight: bold; }
+  .course { display: flex; gap: 10px; align-items: flex-start; padding: 10px 8px; border-top: 1px solid #eee; line-height: 1.45; }
+  .course:first-child { border-top: 0; }
+  .course input { margin-top: 4px; flex: 0 0 auto; }
+  .course span { overflow-wrap: anywhere; }
+  .hidden { display: none; }
+  .submit-row { margin-top: 20px; }
+  .submit-row button { background: #222; color: white; border-color: #222; }
+  textarea { width: 100%; min-height: 150px; box-sizing: border-box; margin-top: 14px; padding: 10px; font-family: Arial, sans-serif; }
+  .letter-box { display: none; margin-top: 24px; padding: 22px; border: 1px solid #ccc; border-radius: 10px; background: #fff; line-height: 1.7; }
+  .letter-box h2 { margin-top: 0; font-size: 22px; }
+  .letter-content { white-space: pre-wrap; font-family: Arial, sans-serif; font-size: 16px; }
+  .letter-actions { margin-top: 16px; }
+  .letter-actions button { background: #fff; color: #222; }
+  #copyLetter {
+    background: #0b6efd;
+    color: #fff;
+    border: 2px solid #084298;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 12px 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.16);
+  }
+  #copyLetter:hover { background: #0a58ca; }
+  #copyLetter:focus { outline: 3px solid rgba(11,110,253,.28); outline-offset: 2px; }
+
+  .semester-text { color: #8a3ffc; font-weight: 700; }
+  .course-name-label { color: #0066cc; font-weight: 700; }
+  .lecturer-label { color: #b42318; font-weight: 700; }
+  .lecture-type { color: #7c3aed; font-weight: 700; }
+  .exercise-type { color: #0f766e; font-weight: 700; }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <h1>בחירת קורסי לימוד לתלמידי תואר שני והשלמות בחוג למערכות מידע בשנת תשפ&quot;ז</h1>
+
+    <div class="intro">
+      <p>שלום רב,</p>
+      <p>תהליך ההרשמה לקורסים לתלמידי תואר שני ולימודי השלמות בחוג למערכות מידע מצריך בדיקה של היועץ/מנחה שמלווה אותך במהלך לימודיך.</p>
+      <p>ההרשמה לקורסים תתבצע לאחר בדיקתו ויישום המלצותיו.</p>
+      <p>הטופס הזה נועד לרכז את בחירותיך אשר יועברו ליועץ/מנחה.</p>
+      <p>שימ/י לב, את לו&quot;ז הקורס ניתן למצוא בקטלוג הקורסים <a href="https://studapps.haifa.ac.il/catalog/#/courses" target="_blank" rel="noopener noreferrer">https://studapps.haifa.ac.il/catalog/#/courses</a>. בנוסף, יש קורסים בהם יש יותר מקבוצת תרגיל אחת, ניתן למצוא בקטלוג את לו&quot;ז המופעים השונים ולכתוב בתיבת ההערות את קבוצת התרגיל הרצויה לך.</p>
+      <p>תודה רבה על שיתוף הפעולה,<br>החוג למערכות מידע, אוניברסיטת חיפה</p>
+    </div>
+
+    <form id="courseForm">
+      <div class="required-fields">
+        <div class="field">
+          <label for="email">מה כתובת הדוא&quot;ל שלך? <span class="required-mark">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="advisor">מה שם היועץ/מנחה שלך? <span class="required-mark">*</span></label>
+          <select id="advisor" name="advisor" required>
+            <option value="" selected disabled>יש לבחור יועץ/מנחה</option>
+            <option>אשרת איילון</option>
+            <option>עפר ארזי</option>
+            <option>מריו בולאי</option>
+            <option>רותם דרור</option>
+            <option>עירית הדר</option>
+            <option>אנה זמנסקי</option>
+            <option>טדי לזבניק</option>
+            <option>יואל לניר</option>
+            <option>עינת מינקוב</option>
+            <option>אוסי מוקרין</option>
+            <option>יהודית סומך</option>
+            <option>פנינה סופר</option>
+            <option>אדיר סלומון</option>
+            <option>מור פלג</option>
+            <option>צבי קופליק</option>
+            <option>איריס ריינהרץ-ברגר</option>
+            <option>אילן שמשוני</option>                    
+           </select>
+        </div>
+
+        <div class="field">
+          <label for="idNumber">מה מספר ת.ז.שלך? <span class="required-mark">*</span></label>
+          <div class="help-text">אנא רשמו מספר ת.ז. ב-9 ספרות</div>
+          <input type="text" id="idNumber" name="idNumber" required inputmode="numeric" pattern="[0-9]{9}" maxlength="9" minlength="9" autocomplete="off" placeholder="9 ספרות">
+        </div>
+
+        <div class="field">
+          <label for="fullName">אנא רשום/רשמי את שמך הפרטי ושם משפחתך <span class="required-mark">*</span></label>
+          <input type="text" id="fullName" name="fullName" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="mobile">מספר טלפון נייד: <span class="required-mark">*</span></label>
+          <input type="tel" id="mobile" name="mobile" required autocomplete="tel" inputmode="tel">
+        </div>
+
+        <fieldset class="field choice-field">
+          <legend>מסלול לימודים: <span class="required-mark">*</span></legend>
+          <label class="choice"><input type="radio" name="studyTrack" value="עם תזה" required> <span>עם תזה</span></label>
+          <label class="choice"><input type="radio" name="studyTrack" value="ללא תזה"> <span>ללא תזה</span></label>
+          <label class="choice"><input type="radio" name="studyTrack" value="התמחות HCI"> <span>התמחות HCI</span></label>
+        </fieldset>
+
+        <fieldset class="field choice-field">
+          <legend>שנת הלימודים שבה התחלתי ללמוד: <span class="required-mark">*</span></legend>
+          <label class="choice"><input type="radio" name="startYear" value="שנת תשפ&quot;ז" required> <span>שנת תשפ&quot;ז</span></label>
+          <label class="choice"><input type="radio" name="startYear" value="שנת תשפ&quot;ו"> <span>שנת תשפ&quot;ו</span></label>
+          <label class="choice"><input type="radio" name="startYear" value="שנת תשפ&quot;ה"> <span>שנת תשפ&quot;ה</span></label>
+          <label class="choice"><input type="radio" name="startYear" value="שנת תשפ&quot;ד ומוקדם יותר"> <span>שנת תשפ&quot;ד ומוקדם יותר</span></label>
+        </fieldset>
+
+        <fieldset class="field choice-field">
+          <legend>האם שילמת את מקדמת שכר הלימוד לשנה&quot;ל תשפ&quot;ז? <span class="required-mark">*</span></legend>
+          <div class="help-text">(אי תשלום המקדמה ימנע ממזכירות החוג לרשום אותך לקורסים)</div>
+          <label class="choice"><input type="radio" name="tuitionAdvance" value="כן" required> <span>כן</span></label>
+          <label class="choice"><input type="radio" name="tuitionAdvance" value="לא"> <span>לא</span></label>
+        </fieldset>
+
+        <fieldset class="field choice-field">
+          <legend>סמסטר שבו התחלתי ללמוד: <span class="required-mark">*</span></legend>
+          <label class="choice"><input type="radio" name="startSemester" value="סמסטר א" required> <span>סמסטר א</span></label>
+          <label class="choice"><input type="radio" name="startSemester" value="סמסטר ב"> <span>סמסטר ב</span></label>
+        </fieldset>
+
+        <fieldset class="field choice-field">
+          <legend>האם את/ה תלמיד/ה השלמות? <span class="required-mark">*</span></legend>
+          <label class="choice"><input type="radio" name="supplementaryStudent" value="כן" required> <span>כן</span></label>
+          <label class="choice"><input type="radio" name="supplementaryStudent" value="לא"> <span>לא</span></label>
+        </fieldset>
+
+        <fieldset class="field choice-field">
+          <legend>האם התקבלת עם תנאי קבלה מיוחדים? <span class="required-mark">*</span></legend>
+          <label class="choice"><input type="radio" name="specialConditions" value="לא" required> <span>לא</span></label>
+          <label class="choice"><input type="radio" name="specialConditions" value="כן"> <span>כן</span></label>
+        </fieldset>
+
+        <div class="field" id="specialConditionsDetailsWrap">
+          <label for="specialConditionsDetails">אם כן, אנא פרט/י את תנאי הקבלה שנקבעו לך (השתתפות בקורסים וכד'):</label>
+          <textarea id="specialConditionsDetails" name="specialConditionsDetails" class="details-textarea"></textarea>
+        </div>
+      </div>
+
+      <p class="instructions">סמנו בבקשה את כל הקורסים שתרצו ללמוד בשנת הלימודים תשפ"ז בהתאם למבנה תכנית הלימודים ששלחנו לכם בדוא"ל.</p>
+
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="חיפוש ברשימת הקורסים" aria-label="חיפוש ברשימת הקורסים">
+      <button type="button" id="selectAll">בחר הכול</button>
+      <button type="button" id="clearAll">נקה בחירה</button>
+    </div>
+
+    <div class="count" id="count">נבחרו 0 מתוך 137 קורסים</div>
+
+      <div id="courseList">
+<h2 class="semester-heading">סמסטר א׳</h2>
+<label class="course" for="course-1">
+      <input type="checkbox" id="course-1" name="courses" value="סמסטר א, שם הקורס: 214.1100א01 חדוא א: שיעור, המרצה: מר עודה טאהר, ביום ב משעה 12 עד שעה 15">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1100א01 חדוא א: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר עודה טאהר, ביום ב משעה 12 עד שעה 15</span>
+    </label>
+<label class="course" for="course-2">
+      <input type="checkbox" id="course-2" name="courses" value="סמסטר א, שם הקורס: 214.1100א02 חדוא א: תרגיל, ביום ב משעה 10 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1100א02 חדוא א: <span class="exercise-type">תרגיל</span>, ביום ב משעה 10 עד שעה 12</span>
+    </label>
+<label class="course" for="course-3">
+      <input type="checkbox" id="course-3" name="courses" value="סמסטר א, שם הקורס: 214.1100א03 חדוא א: תרגיל, ביום ג משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1100א03 חדוא א: <span class="exercise-type">תרגיל</span>, ביום ג משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-4">
+      <input type="checkbox" id="course-4" name="courses" value="סמסטר א, שם הקורס: 214.1200א01 חדוא ב: שיעור, המרצה: מר מרעי יזיד, ביום ב משעה 09 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1200א01 חדוא ב: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר מרעי יזיד, ביום ב משעה 09 עד שעה 12</span>
+    </label>
+<label class="course" for="course-5">
+      <input type="checkbox" id="course-5" name="courses" value="סמסטר א, שם הקורס: 214.1200א02 חדוא ב: תרגיל, ביום ב משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1200א02 חדוא ב: <span class="exercise-type">תרגיל</span>, ביום ב משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-6">
+      <input type="checkbox" id="course-6" name="courses" value="סמסטר א, שם הקורס: 214.1300א01 הסתברות למערכות מידע: שיעור, המרצה: דר ברקן ניצנה-ויקטוריה, ביום א משעה 09 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1300א01 הסתברות למערכות מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר ברקן ניצנה-ויקטוריה, ביום א משעה 09 עד שעה 12</span>
+    </label>
+<label class="course" for="course-7">
+      <input type="checkbox" id="course-7" name="courses" value="סמסטר א, שם הקורס: 214.1300א02 הסתברות למערכות מידע: תרגיל, ביום א משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1300א02 הסתברות למערכות מידע: <span class="exercise-type">תרגיל</span>, ביום א משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-8">
+      <input type="checkbox" id="course-8" name="courses" value="סמסטר א, שם הקורס: 214.1300א03 הסתברות למערכות מידע: תרגיל, ביום ג משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1300א03 הסתברות למערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ג משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-9">
+      <input type="checkbox" id="course-9" name="courses" value="סמסטר א, שם הקורס: 214.1300א04 הסתברות למערכות מידע: תרגיל, ביום ג משעה 08 עד שעה 10">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1300א04 הסתברות למערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ג משעה 08 עד שעה 10</span>
+    </label>
+<label class="course" for="course-10">
+      <input type="checkbox" id="course-10" name="courses" value="סמסטר א, שם הקורס: 214.1500א01 אלגברה לינארית: שיעור, המרצה: מר בוקאעי תמיר, ביום ב משעה 15 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1500א01 אלגברה לינארית: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר בוקאעי תמיר, ביום ב משעה 15 עד שעה 18</span>
+    </label>
+<label class="course" for="course-11">
+      <input type="checkbox" id="course-11" name="courses" value="סמסטר א, שם הקורס: 214.1500א02 אלגברה לינארית: תרגיל, ביום ב משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1500א02 אלגברה לינארית: <span class="exercise-type">תרגיל</span>, ביום ב משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-12">
+      <input type="checkbox" id="course-12" name="courses" value="סמסטר א, שם הקורס: 214.1500א03 אלגברה לינארית: תרגיל, ביום ג משעה 08 עד שעה 10">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1500א03 אלגברה לינארית: <span class="exercise-type">תרגיל</span>, ביום ג משעה 08 עד שעה 10</span>
+    </label>
+<label class="course" for="course-13">
+      <input type="checkbox" id="course-13" name="courses" value="סמסטר א, שם הקורס: 214.1505א01 מתמטיקה דיסקרטית ולוגיקה: שיעור, המרצה: מר עודה טאהר, ביום ה משעה 12 עד שעה 15">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1505א01 מתמטיקה דיסקרטית ולוגיקה: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר עודה טאהר, ביום ה משעה 12 עד שעה 15</span>
+    </label>
+<label class="course" for="course-14">
+      <input type="checkbox" id="course-14" name="courses" value="סמסטר א, שם הקורס: 214.1505א02 מתמטיקה דיסקרטית ולוגיקה: תרגיל, ביום ה משעה 15 עד שעה 17">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1505א02 מתמטיקה דיסקרטית ולוגיקה: <span class="exercise-type">תרגיל</span>, ביום ה משעה 15 עד שעה 17</span>
+    </label>
+<label class="course" for="course-15">
+      <input type="checkbox" id="course-15" name="courses" value="סמסטר א, שם הקורס: 214.1700א01 מבוא לטכנולוגית מידע בארגון: שיעור, המרצה: דר אילון אשרת, ביום א משעה 14 עד שעה 17">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1700א01 מבוא לטכנולוגית מידע בארגון: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר אילון אשרת, ביום א משעה 14 עד שעה 17</span>
+    </label>
+<label class="course" for="course-16">
+      <input type="checkbox" id="course-16" name="courses" value="סמסטר א, שם הקורס: 214.1700א02 מבוא לטכנולוגית מידע בארגון: תרגיל, ביום א משעה 17 עד שעה 19">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1700א02 מבוא לטכנולוגית מידע בארגון: <span class="exercise-type">תרגיל</span>, ביום א משעה 17 עד שעה 19</span>
+    </label>
+<label class="course" for="course-17">
+      <input type="checkbox" id="course-17" name="courses" value="סמסטר א, שם הקורס: 214.1700א03 מבוא לטכנולוגית מידע בארגון: תרגיל, ביום ב משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1700א03 מבוא לטכנולוגית מידע בארגון: <span class="exercise-type">תרגיל</span>, ביום ב משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-18">
+      <input type="checkbox" id="course-18" name="courses" value="סמסטר א, שם הקורס: 214.1900א01 מבוא למחשבים ותיכנות: שיעור, המרצה: דר בולאי מריו אנדרה, ביום ג משעה 10 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1900א01 מבוא למחשבים ותיכנות: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר בולאי מריו אנדרה, ביום ג משעה 10 עד שעה 14</span>
+    </label>
+<label class="course" for="course-19">
+      <input type="checkbox" id="course-19" name="courses" value="סמסטר א, שם הקורס: 214.1900א02 מבוא למחשבים ותיכנות: תרגיל, ביום ג משעה 14 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1900א02 מבוא למחשבים ותיכנות: <span class="exercise-type">תרגיל</span>, ביום ג משעה 14 עד שעה 16</span>
+    </label>
+<label class="course" for="course-20">
+      <input type="checkbox" id="course-20" name="courses" value="סמסטר א, שם הקורס: 214.1900א03 מבוא למחשבים ותיכנות: תרגיל, ביום ג משעה 14 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1900א03 מבוא למחשבים ותיכנות: <span class="exercise-type">תרגיל</span>, ביום ג משעה 14 עד שעה 16</span>
+    </label>
+<label class="course" for="course-21">
+      <input type="checkbox" id="course-21" name="courses" value="סמסטר א, שם הקורס: 214.1900א04 מבוא למחשבים ותיכנות: מעבדה, ביום ג משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1900א04 מבוא למחשבים ותיכנות: מעבדה, ביום ג משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-22">
+      <input type="checkbox" id="course-22" name="courses" value="סמסטר א, שם הקורס: 214.1900א05 מבוא למחשבים ותיכנות: מעבדה, ביום ג משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1900א05 מבוא למחשבים ותיכנות: מעבדה, ביום ג משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-23">
+      <input type="checkbox" id="course-23" name="courses" value="סמסטר א, שם הקורס: 214.1900א06 מבוא למחשבים ותיכנות: תרגיל, ביום ג משעה 14 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1900א06 מבוא למחשבים ותיכנות: <span class="exercise-type">תרגיל</span>, ביום ג משעה 14 עד שעה 16</span>
+    </label>
+<label class="course" for="course-24">
+      <input type="checkbox" id="course-24" name="courses" value="סמסטר א, שם הקורס: 214.1900א07 מבוא למחשבים ותיכנות: מעבדה, ביום ג משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1900א07 מבוא למחשבים ותיכנות: מעבדה, ביום ג משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-25">
+      <input type="checkbox" id="course-25" name="courses" value="סמסטר א, שם הקורס: 214.1960א01 תכנות מונחה עצמים: שיעור, המרצה: דר עסאקלה שאדי, ביום ג משעה 10 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1960א01 תכנות מונחה עצמים: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר עסאקלה שאדי, ביום ג משעה 10 עד שעה 14</span>
+    </label>
+<label class="course" for="course-26">
+      <input type="checkbox" id="course-26" name="courses" value="סמסטר א, שם הקורס: 214.1960א02 תכנות מונחה עצמים: תרגיל, ביום ג משעה 14 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1960א02 תכנות מונחה עצמים: <span class="exercise-type">תרגיל</span>, ביום ג משעה 14 עד שעה 16</span>
+    </label>
+<label class="course" for="course-27">
+      <input type="checkbox" id="course-27" name="courses" value="סמסטר א, שם הקורס: 214.1960א04 תכנות מונחה עצמים: מעבדה, ביום ג משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.1960א04 תכנות מונחה עצמים: מעבדה, ביום ג משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-28">
+      <input type="checkbox" id="course-28" name="courses" value="סמסטר א, שם הקורס: 214.2200א01 תכן ופיתוח של מערכות מידע: שיעור, המרצה: פרופ&#x27; ריינהרץ-ברגר איריס, ביום ג משעה 10 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2200א01 תכן ופיתוח של מערכות מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> פרופ&#x27; ריינהרץ-ברגר איריס, ביום ג משעה 10 עד שעה 12</span>
+    </label>
+<label class="course" for="course-29">
+      <input type="checkbox" id="course-29" name="courses" value="סמסטר א, שם הקורס: 214.2200א01 תכן ופיתוח של מערכות מידע: שיעור, המרצה: פרופ&#x27; ריינהרץ-ברגר איריס, ביום ג משעה 14 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2200א01 תכן ופיתוח של מערכות מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> פרופ&#x27; ריינהרץ-ברגר איריס, ביום ג משעה 14 עד שעה 16</span>
+    </label>
+<label class="course" for="course-30">
+      <input type="checkbox" id="course-30" name="courses" value="סמסטר א, שם הקורס: 214.2200א02 תכן ופיתוח של מערכות מידע: תרגיל, ביום ג משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2200א02 תכן ופיתוח של מערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ג משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-31">
+      <input type="checkbox" id="course-31" name="courses" value="סמסטר א, שם הקורס: 214.2200א03 תכן ופיתוח של מערכות מידע: תרגיל, ביום ה משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2200א03 תכן ופיתוח של מערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ה משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-32">
+      <input type="checkbox" id="course-32" name="courses" value="סמסטר א, שם הקורס: 214.2590א01 מבוא לתכנות אלגוריתמי- שיעור, ביום ג משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2590א01 מבוא לתכנות אלגוריתמי- <span class="lecture-type">שיעור</span>, ביום ג משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-33">
+      <input type="checkbox" id="course-33" name="courses" value="סמסטר א, שם הקורס: 214.2590א02 מבוא לתכנות אלגוריתמי- תרגיל, ביום ג משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2590א02 מבוא לתכנות אלגוריתמי- <span class="exercise-type">תרגיל</span>, ביום ג משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-34">
+      <input type="checkbox" id="course-34" name="courses" value="סמסטר א, שם הקורס: 214.2700א01 ניתוח מערכות מידע: שיעור, המרצה: דר אוטמזגין נסים, ביום א משעה 14 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2700א01 ניתוח מערכות מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר אוטמזגין נסים, ביום א משעה 14 עד שעה 18</span>
+    </label>
+<label class="course" for="course-35">
+      <input type="checkbox" id="course-35" name="courses" value="סמסטר א, שם הקורס: 214.2700א02 ניתוח מערכות מידע: תרגיל, ביום א משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2700א02 ניתוח מערכות מידע: <span class="exercise-type">תרגיל</span>, ביום א משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-36">
+      <input type="checkbox" id="course-36" name="courses" value="סמסטר א, שם הקורס: 214.2900א01 תקשורת נתונים: שיעור, המרצה: דר מוקרין אוסי, ביום ד משעה 08 עד שעה 11">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2900א01 תקשורת נתונים: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר מוקרין אוסי, ביום ד משעה 08 עד שעה 11</span>
+    </label>
+<label class="course" for="course-37">
+      <input type="checkbox" id="course-37" name="courses" value="סמסטר א, שם הקורס: 214.2900א02 תקשורת נתונים: תרגיל, ביום ד משעה 11 עד שעה 13">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2900א02 תקשורת נתונים: <span class="exercise-type">תרגיל</span>, ביום ד משעה 11 עד שעה 13</span>
+    </label>
+<label class="course" for="course-38">
+      <input type="checkbox" id="course-38" name="courses" value="סמסטר א, שם הקורס: 214.2900א03 תקשורת נתונים: תרגיל, ביום ד משעה 13 עד שעה 15">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2900א03 תקשורת נתונים: <span class="exercise-type">תרגיל</span>, ביום ד משעה 13 עד שעה 15</span>
+    </label>
+<label class="course" for="course-39">
+      <input type="checkbox" id="course-39" name="courses" value="סמסטר א, שם הקורס: 214.2990א01 מבני נתונים ואלגוריתמים: שיעור, המרצה: דר לזבניק טדי, ביום ה משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2990א01 מבני נתונים ואלגוריתמים: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר לזבניק טדי, ביום ה משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-40">
+      <input type="checkbox" id="course-40" name="courses" value="סמסטר א, שם הקורס: 214.2990א02 מבני נתונים ואלגוריתמים: תרגיל, ביום ה משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2990א02 מבני נתונים ואלגוריתמים: <span class="exercise-type">תרגיל</span>, ביום ה משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-41">
+      <input type="checkbox" id="course-41" name="courses" value="סמסטר א, שם הקורס: 214.2990א03 מבני נתונים ואלגוריתמים: תרגיל, ביום ג משעה 14 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.2990א03 מבני נתונים ואלגוריתמים: <span class="exercise-type">תרגיל</span>, ביום ג משעה 14 עד שעה 16</span>
+    </label>
+<label class="course" for="course-42">
+      <input type="checkbox" id="course-42" name="courses" value="סמסטר א, שם הקורס: 214.3010א01 פרטיות ואתיקה של מידע-שיעור, המרצה: דר אילון אשרת, ביום א משעה 08 עד שעה 10">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3010א01 פרטיות ואתיקה של מידע-<span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר אילון אשרת, ביום א משעה 08 עד שעה 10</span>
+    </label>
+<label class="course" for="course-43">
+      <input type="checkbox" id="course-43" name="courses" value="סמסטר א, שם הקורס: 214.3113א01 בינה עסקית ומחסני נתונים: שיעור, המרצה: דר אגבאריה עדנאן, ביום ב משעה 17 עד שעה 20">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3113א01 בינה עסקית ומחסני נתונים: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר אגבאריה עדנאן, ביום ב משעה 17 עד שעה 20</span>
+    </label>
+<label class="course" for="course-44">
+      <input type="checkbox" id="course-44" name="courses" value="סמסטר א, שם הקורס: 214.3115א01 שיטות במדעי הנתונים ליישומים ביו-רפואיים, המרצה: דר סומך יהודית, ביום ג משעה 10 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3115א01 שיטות במדעי הנתונים ליישומים ביו-רפואיים, <span class="lecturer-label">המרצה:</span> דר סומך יהודית, ביום ג משעה 10 עד שעה 14</span>
+    </label>
+<label class="course" for="course-45">
+      <input type="checkbox" id="course-45" name="courses" value="סמסטר א, שם הקורס: 214.3120א01 תכנון אתי למערכות AI- שיעור, המרצה: דר מוקרין אוסי, ביום ה משעה 12 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3120א01 תכנון אתי למערכות AI- <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר מוקרין אוסי, ביום ה משעה 12 עד שעה 16</span>
+    </label>
+<label class="course" for="course-46">
+      <input type="checkbox" id="course-46" name="courses" value="סמסטר א, שם הקורס: 214.3170א01 למידה עמוקה-שיעור, המרצה: דר דרור רותם, ביום א משעה 10 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3170א01 למידה עמוקה-<span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר דרור רותם, ביום א משעה 10 עד שעה 14</span>
+    </label>
+<label class="course" for="course-47">
+      <input type="checkbox" id="course-47" name="courses" value="סמסטר א, שם הקורס: 214.3170א02 למידה עמוקה -תרגיל, ביום א משעה 14 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3170א02 למידה עמוקה -<span class="exercise-type">תרגיל</span>, ביום א משעה 14 עד שעה 16</span>
+    </label>
+<label class="course" for="course-48">
+      <input type="checkbox" id="course-48" name="courses" value="סמסטר א, שם הקורס: 214.3180א01 סמינר: מניפולציה ברשתות ופייק ניוז, המרצה: דר מוקרין אוסי, ביום ד משעה 14 עד שעה 16">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3180א01 סמינר: מניפולציה ברשתות ופייק ניוז, <span class="lecturer-label">המרצה:</span> דר מוקרין אוסי, ביום ד משעה 14 עד שעה 16</span>
+    </label>
+<label class="course" for="course-66">
+      <input type="checkbox" id="course-66" name="courses" value="סמסטר א, שם הקורס: 214.3190א01 סייבר הגנתי והתקפי: שיעור, המרצה: מר דאר יורם, ביום ג משעה 14 עד שעה 17">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3190א01 סייבר הגנתי והתקפי: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר דאר יורם, ביום ג משעה 14 עד שעה 17</span>
+    </label>
+<label class="course" for="course-49">
+      <input type="checkbox" id="course-49" name="courses" value="סמסטר א, שם הקורס: 214.3610א01 הנדסת תוכנה ואבטחת איכות: שיעור, המרצה: גב&#x27; האשם נאריד, ביום ב משעה 08 עד שעה 11">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3610א01 הנדסת תוכנה ואבטחת איכות: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> גב&#x27; האשם נאריד, ביום ב משעה 08 עד שעה 11</span>
+    </label>
+<label class="course" for="course-50">
+      <input type="checkbox" id="course-50" name="courses" value="סמסטר א, שם הקורס: 214.3610א02 הנדסת תוכנה ואבטחת איכות: תרגיל, ביום ב משעה 11 עד שעה 15">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3610א02 הנדסת תוכנה ואבטחת איכות: <span class="exercise-type">תרגיל</span>, ביום ב משעה 11 עד שעה 15</span>
+    </label>
+<label class="course" for="course-51">
+      <input type="checkbox" id="course-51" name="courses" value="סמסטר א, שם הקורס: 214.3610א03 הנדסת תוכנה ואבטחת איכות: תרגיל, ביום ב משעה 11 עד שעה 15">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3610א03 הנדסת תוכנה ואבטחת איכות: <span class="exercise-type">תרגיל</span>, ביום ב משעה 11 עד שעה 15</span>
+    </label>
+<label class="course" for="course-52">
+      <input type="checkbox" id="course-52" name="courses" value="סמסטר א, שם הקורס: 214.3700א01 אחזור מידע- שיעור, המרצה: מר פרידמן משה, ביום ב משעה 13 עד שעה 17">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3700א01 אחזור מידע- <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר פרידמן משה, ביום ב משעה 13 עד שעה 17</span>
+    </label>
+<label class="course" for="course-53">
+      <input type="checkbox" id="course-53" name="courses" value="סמסטר א, שם הקורס: 214.3702א01 מבוא לבינה מלאכותית: שיעור, המרצה: פרופ&#x27; מינקוב עינת, ביום ה משעה 14 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3702א01 מבוא לבינה מלאכותית: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> פרופ&#x27; מינקוב עינת, ביום ה משעה 14 עד שעה 18</span>
+    </label>
+<label class="course" for="course-54">
+      <input type="checkbox" id="course-54" name="courses" value="סמסטר א, שם הקורס: 214.3702א02 מבוא לבינה מלאכותית-תרגיל, ביום ג משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3702א02 מבוא לבינה מלאכותית-<span class="exercise-type">תרגיל</span>, ביום ג משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-55">
+      <input type="checkbox" id="course-55" name="courses" value="סמסטר א, שם הקורס: 214.3702א03 מבוא לבינה מלאכותית-תרגיל, ביום ד משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3702א03 מבוא לבינה מלאכותית-<span class="exercise-type">תרגיל</span>, ביום ד משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-56">
+      <input type="checkbox" id="course-56" name="courses" value="סמסטר א, שם הקורס: 214.3710א01 ניהול נתוני עתק- BIG DATA: שיעור, המרצה: מר ברגר ארטיום, ביום ג משעה 17 עד שעה 21">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3710א01 ניהול נתוני עתק- BIG DATA: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר ברגר ארטיום, ביום ג משעה 17 עד שעה 21</span>
+    </label>
+<label class="course" for="course-57">
+      <input type="checkbox" id="course-57" name="courses" value="סמסטר א, שם הקורס: 214.3801א01 יצירתיות וקוגניציה בהנדסת דרישות-סמינר, המרצה: גב&#x27; לוי נטליה, ביום ה משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3801א01 יצירתיות וקוגניציה בהנדסת דרישות-סמינר, <span class="lecturer-label">המרצה:</span> גב&#x27; לוי נטליה, ביום ה משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-58">
+      <input type="checkbox" id="course-58" name="courses" value="סמסטר א, שם הקורס: 214.3860א01 ממשקים לא מילוליים: סמינר, המרצה: פרופ&#x27; זמנסקי אנה, ביום ד משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3860א01 ממשקים לא מילוליים: סמינר, <span class="lecturer-label">המרצה:</span> פרופ&#x27; זמנסקי אנה, ביום ד משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-59">
+      <input type="checkbox" id="course-59" name="courses" value="סמסטר א, שם הקורס: 214.3888א01 סמינר מחלקתי, ביום ד משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3888א01 סמינר מחלקתי, ביום ד משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-60">
+      <input type="checkbox" id="course-60" name="courses" value="סמסטר א, שם הקורס: 214.3895א01 מערכות המלצה מבוססות בינה מלאכותית, המרצה: דר סולומון אדיר, ביום ד משעה 09 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.3895א01 מערכות המלצה מבוססות בינה מלאכותית, <span class="lecturer-label">המרצה:</span> דר סולומון אדיר, ביום ד משעה 09 עד שעה 12</span>
+    </label>
+<label class="course" for="course-61">
+      <input type="checkbox" id="course-61" name="courses" value="סמסטר א, שם הקורס: 214.4060א01 טכנולוגיית המידע וקיימות- סמינר, המרצה: פרופ&#x27; ארזי עפר, ביום ד משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.4060א01 טכנולוגיית המידע וקיימות- סמינר, <span class="lecturer-label">המרצה:</span> פרופ&#x27; ארזי עפר, ביום ד משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-62">
+      <input type="checkbox" id="course-62" name="courses" value="סמסטר א, שם הקורס: 214.4350א01 סדנה מתקדמת לאפיון אינטראקציה: שיעור, המרצה: מר בן ברק שי, ביום ה משעה 16 עד שעה 20">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.4350א01 סדנה מתקדמת לאפיון אינטראקציה: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר בן ברק שי, ביום ה משעה 16 עד שעה 20</span>
+    </label>
+<label class="course" for="course-63">
+      <input type="checkbox" id="course-63" name="courses" value="סמסטר א, שם הקורס: 214.4603א01 כריית תהליכים עסקיים: סמינר, המרצה: פרופ&#x27; סופר פנינה, ביום ד משעה 14 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.4603א01 כריית תהליכים עסקיים: סמינר, <span class="lecturer-label">המרצה:</span> פרופ&#x27; סופר פנינה, ביום ד משעה 14 עד שעה 18</span>
+    </label>
+<label class="course" for="course-64">
+      <input type="checkbox" id="course-64" name="courses" value="סמסטר א, שם הקורס: 214.4740א01 שקיפות אלגוריתמית: סמינר, המרצה: פרופ&#x27; קופליק צבי, ביום ב משעה 13 עד שעה 17">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.4740א01 שקיפות אלגוריתמית: סמינר, <span class="lecturer-label">המרצה:</span> פרופ&#x27; קופליק צבי, ביום ב משעה 13 עד שעה 17</span>
+    </label>
+<label class="course" for="course-65">
+      <input type="checkbox" id="course-65" name="courses" value="סמסטר א, שם הקורס: 214.4910א01 נושאים מתקדמים באינטראקציית אדם מחשב -סמ, המרצה: פרופ&#x27; לניר יואל, ביום ה משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 214.4910א01 נושאים מתקדמים באינטראקציית אדם מחשב -סמ, <span class="lecturer-label">המרצה:</span> פרופ&#x27; לניר יואל, ביום ה משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-67">
+      <input type="checkbox" id="course-67" name="courses" value="סמסטר א, שם הקורס: 320.4151א01 טכנולוגיות מתקדמות בהתפתחות ושיקום, המרצה: פרופ&#x27; קופליק צבי, ביום ד משעה 08 עד שעה 18">
+      <span><span class="semester-text">סמסטר א</span>, <span class="course-name-label">שם הקורס:</span> 320.4151א01 טכנולוגיות מתקדמות בהתפתחות ושיקום, <span class="lecturer-label">המרצה:</span> פרופ&#x27; קופליק צבי, ביום ד משעה 08 עד שעה 18</span>
+    </label>
+<h2 class="semester-heading">סמסטר ב׳</h2>
+<label class="course" for="course-68">
+      <input type="checkbox" id="course-68" name="courses" value="סמסטר ב, שם הקורס: 214.1100ב01 חדוא א: שיעור, המרצה: מר מרעי יזיד, ביום א משעה 15 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1100ב01 חדוא א: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר מרעי יזיד, ביום א משעה 15 עד שעה 18</span>
+    </label>
+<label class="course" for="course-69">
+      <input type="checkbox" id="course-69" name="courses" value="סמסטר ב, שם הקורס: 214.1100ב02 חדוא א: תרגיל, ביום א משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1100ב02 חדוא א: <span class="exercise-type">תרגיל</span>, ביום א משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-70">
+      <input type="checkbox" id="course-70" name="courses" value="סמסטר ב, שם הקורס: 214.1200ב01 חדוא ב: שיעור, המרצה: מר עודה טאהר, ביום א משעה 15 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1200ב01 חדוא ב: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר עודה טאהר, ביום א משעה 15 עד שעה 18</span>
+    </label>
+<label class="course" for="course-71">
+      <input type="checkbox" id="course-71" name="courses" value="סמסטר ב, שם הקורס: 214.1200ב02 חדוא ב: תרגיל, ביום א משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1200ב02 חדוא ב: <span class="exercise-type">תרגיל</span>, ביום א משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-72">
+      <input type="checkbox" id="course-72" name="courses" value="סמסטר ב, שם הקורס: 214.1200ב03 חדוא ב: תרגיל, ביום ג משעה 08 עד שעה 10">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1200ב03 חדוא ב: <span class="exercise-type">תרגיל</span>, ביום ג משעה 08 עד שעה 10</span>
+    </label>
+<label class="course" for="course-73">
+      <input type="checkbox" id="course-73" name="courses" value="סמסטר ב, שם הקורס: 214.1400ב01 סטטיסטיקה למערכות מידע: שיעור, המרצה: דר ברקן ניצנה-ויקטוריה, ביום ה משעה 11 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1400ב01 סטטיסטיקה למערכות מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר ברקן ניצנה-ויקטוריה, ביום ה משעה 11 עד שעה 14</span>
+    </label>
+<label class="course" for="course-74">
+      <input type="checkbox" id="course-74" name="courses" value="סמסטר ב, שם הקורס: 214.1400ב02 סטטיסטיקה למערכות מידע: תרגיל, ביום ה משעה 09 עד שעה 11">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1400ב02 סטטיסטיקה למערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ה משעה 09 עד שעה 11</span>
+    </label>
+<label class="course" for="course-75">
+      <input type="checkbox" id="course-75" name="courses" value="סמסטר ב, שם הקורס: 214.1400ב03 סטטיסטיקה למערכות מידע: תרגיל, ביום ה משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1400ב03 סטטיסטיקה למערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ה משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-76">
+      <input type="checkbox" id="course-76" name="courses" value="סמסטר ב, שם הקורס: 214.1500ב01 אלגברה לינארית: שיעור, המרצה: מר בוקאעי תמיר, ביום ב משעה 09 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1500ב01 אלגברה לינארית: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר בוקאעי תמיר, ביום ב משעה 09 עד שעה 12</span>
+    </label>
+<label class="course" for="course-77">
+      <input type="checkbox" id="course-77" name="courses" value="סמסטר ב, שם הקורס: 214.1500ב02 אלגברה לינארית: תרגיל, ביום ב משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1500ב02 אלגברה לינארית: <span class="exercise-type">תרגיל</span>, ביום ב משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-78">
+      <input type="checkbox" id="course-78" name="courses" value="סמסטר ב, שם הקורס: 214.1505ב01 מתמטיקה דיסקרטית ולוגיקה: שיעור, המרצה: פרופ&#x27; זמנסקי אנה, ביום ה משעה 15 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1505ב01 מתמטיקה דיסקרטית ולוגיקה: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> פרופ&#x27; זמנסקי אנה, ביום ה משעה 15 עד שעה 18</span>
+    </label>
+<label class="course" for="course-79">
+      <input type="checkbox" id="course-79" name="courses" value="סמסטר ב, שם הקורס: 214.1505ב02 מתמטיקה דיסקרטית ולוגיקה: תרגיל, ביום ה משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1505ב02 מתמטיקה דיסקרטית ולוגיקה: <span class="exercise-type">תרגיל</span>, ביום ה משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-80">
+      <input type="checkbox" id="course-80" name="courses" value="סמסטר ב, שם הקורס: 214.1505ב03 מתמטיקה דיסקרטית ולוגיקה: תרגיל, ביום ג משעה 10 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1505ב03 מתמטיקה דיסקרטית ולוגיקה: <span class="exercise-type">תרגיל</span>, ביום ג משעה 10 עד שעה 12</span>
+    </label>
+<label class="course" for="course-81">
+      <input type="checkbox" id="course-81" name="courses" value="סמסטר ב, שם הקורס: 214.1650ב01 היבטים כלכליים בקבלת החלטות: שיעור, המרצה: דר אייכל רון, ביום א משעה 12 עד שעה 15">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1650ב01 היבטים כלכליים בקבלת החלטות: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר אייכל רון, ביום א משעה 12 עד שעה 15</span>
+    </label>
+<label class="course" for="course-82">
+      <input type="checkbox" id="course-82" name="courses" value="סמסטר ב, שם הקורס: 214.1700ב01 מבוא לטכנולוגית מידע בארגון: שיעור, המרצה: גב&#x27; קוגן אלכסנדרה, ביום ב משעה 15 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1700ב01 מבוא לטכנולוגית מידע בארגון: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> גב&#x27; קוגן אלכסנדרה, ביום ב משעה 15 עד שעה 18</span>
+    </label>
+<label class="course" for="course-83">
+      <input type="checkbox" id="course-83" name="courses" value="סמסטר ב, שם הקורס: 214.1700ב02 מבוא לטכנולוגית מידע בארגון: תרגיל, ביום ב משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1700ב02 מבוא לטכנולוגית מידע בארגון: <span class="exercise-type">תרגיל</span>, ביום ב משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-84">
+      <input type="checkbox" id="course-84" name="courses" value="סמסטר ב, שם הקורס: 214.1750ב01 מבוא למדעי הנתונים -שיעור, המרצה: דר סולומון אדיר, ביום ג משעה 09 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1750ב01 מבוא למדעי הנתונים -<span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר סולומון אדיר, ביום ג משעה 09 עד שעה 12</span>
+    </label>
+<label class="course" for="course-85">
+      <input type="checkbox" id="course-85" name="courses" value="סמסטר ב, שם הקורס: 214.1810ב01 התנהגות ארגונית: שיעור, המרצה: דר אייכל רון, ביום א משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1810ב01 התנהגות ארגונית: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר אייכל רון, ביום א משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-86">
+      <input type="checkbox" id="course-86" name="courses" value="סמסטר ב, שם הקורס: 214.1900ב01 מבוא למחשבים ותיכנות: שיעור, ביום ג משעה 12 עד שעה 16">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1900ב01 מבוא למחשבים ותיכנות: <span class="lecture-type">שיעור</span>, ביום ג משעה 12 עד שעה 16</span>
+    </label>
+<label class="course" for="course-87">
+      <input type="checkbox" id="course-87" name="courses" value="סמסטר ב, שם הקורס: 214.1900ב02 מבוא למחשבים ותיכנות: תרגיל, ביום ג משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1900ב02 מבוא למחשבים ותיכנות: <span class="exercise-type">תרגיל</span>, ביום ג משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-88">
+      <input type="checkbox" id="course-88" name="courses" value="סמסטר ב, שם הקורס: 214.1900ב03 מבוא למחשבים ותיכנות: מעבדה, ביום ג משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1900ב03 מבוא למחשבים ותיכנות: מעבדה, ביום ג משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-89">
+      <input type="checkbox" id="course-89" name="courses" value="סמסטר ב, שם הקורס: 214.1960ב01 תכנות מונחה עצמים: שיעור, המרצה: דר עסאקלה שאדי, ביום ג משעה 12 עד שעה 16">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1960ב01 תכנות מונחה עצמים: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר עסאקלה שאדי, ביום ג משעה 12 עד שעה 16</span>
+    </label>
+<label class="course" for="course-90">
+      <input type="checkbox" id="course-90" name="courses" value="סמסטר ב, שם הקורס: 214.1960ב02 תכנות מונחה עצמים: תרגיל, ביום ג משעה 16 עד שעה 16">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1960ב02 תכנות מונחה עצמים: <span class="exercise-type">תרגיל</span>, ביום ג משעה 16 עד שעה 16</span>
+    </label>
+<label class="course" for="course-91">
+      <input type="checkbox" id="course-91" name="courses" value="סמסטר ב, שם הקורס: 214.1960ב03 תכנות מונחה עצמים: תרגיל, ביום ג משעה 16 עד שעה 16">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1960ב03 תכנות מונחה עצמים: <span class="exercise-type">תרגיל</span>, ביום ג משעה 16 עד שעה 16</span>
+    </label>
+<label class="course" for="course-92">
+      <input type="checkbox" id="course-92" name="courses" value="סמסטר ב, שם הקורס: 214.1960ב04 תכנות מונחה עצמים: מעבדה, ביום ג משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1960ב04 תכנות מונחה עצמים: מעבדה, ביום ג משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-93">
+      <input type="checkbox" id="course-93" name="courses" value="סמסטר ב, שם הקורס: 214.1960ב05 תכנות מונחה עצמים: מעבדה, ביום ג משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1960ב05 תכנות מונחה עצמים: מעבדה, ביום ג משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-94">
+      <input type="checkbox" id="course-94" name="courses" value="סמסטר ב, שם הקורס: 214.1963ב01 השלמה לג&#x27;אוה, המרצה: דר עסאקלה שאדי,">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.1963ב01 השלמה לג&#x27;אוה, <span class="lecturer-label">המרצה:</span> דר עסאקלה שאדי,</span>
+    </label>
+<label class="course" for="course-95">
+      <input type="checkbox" id="course-95" name="courses" value="סמסטר ב, שם הקורס: 214.2200ב01 תכן ופיתוח של מערכות מידע: שיעור, המרצה: דר רשקוביץ רמי, ביום ג משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2200ב01 תכן ופיתוח של מערכות מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר רשקוביץ רמי, ביום ג משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-96">
+      <input type="checkbox" id="course-96" name="courses" value="סמסטר ב, שם הקורס: 214.2200ב02 תכן ופיתוח של מערכות מידע: תרגיל, ביום ג משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2200ב02 תכן ופיתוח של מערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ג משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-97">
+      <input type="checkbox" id="course-97" name="courses" value="סמסטר ב, שם הקורס: 214.2300ב01 פיתוח מערכות מבוססות אינטרנט: שיעור, המרצה: מר ברגר ארטיום, ביום ב משעה 17 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2300ב01 פיתוח מערכות מבוססות אינטרנט: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר ברגר ארטיום, ביום ב משעה 17 עד שעה 20</span>
+    </label>
+<label class="course" for="course-98">
+      <input type="checkbox" id="course-98" name="courses" value="סמסטר ב, שם הקורס: 214.2300ב02 פיתוח מערכות מבוססות אינטרנט: תרגיל, ביום ב משעה 15 עד שעה 17">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2300ב02 פיתוח מערכות מבוססות אינטרנט: <span class="exercise-type">תרגיל</span>, ביום ב משעה 15 עד שעה 17</span>
+    </label>
+<label class="course" for="course-99">
+      <input type="checkbox" id="course-99" name="courses" value="סמסטר ב, שם הקורס: 214.2300ב03 פיתוח מערכות מבוססות אינטרנט: תרגיל, ביום ב משעה 15 עד שעה 17">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2300ב03 פיתוח מערכות מבוססות אינטרנט: <span class="exercise-type">תרגיל</span>, ביום ב משעה 15 עד שעה 17</span>
+    </label>
+<label class="course" for="course-100">
+      <input type="checkbox" id="course-100" name="courses" value="סמסטר ב, שם הקורס: 214.2400ב01 אופטימיזציה במערכות תפעוליות-שיעור, ביום א משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2400ב01 אופטימיזציה במערכות תפעוליות-<span class="lecture-type">שיעור</span>, ביום א משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-101">
+      <input type="checkbox" id="course-101" name="courses" value="סמסטר ב, שם הקורס: 214.2400ב02 אופטימיזציה במערכות תפעוליות-תרגיל, ביום א משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2400ב02 אופטימיזציה במערכות תפעוליות-<span class="exercise-type">תרגיל</span>, ביום א משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-102">
+      <input type="checkbox" id="course-102" name="courses" value="סמסטר ב, שם הקורס: 214.2400ב03 אופטימיזציה במערכות תפעוליות-תרגיל, ביום א משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2400ב03 אופטימיזציה במערכות תפעוליות-<span class="exercise-type">תרגיל</span>, ביום א משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-103">
+      <input type="checkbox" id="course-103" name="courses" value="סמסטר ב, שם הקורס: 214.2510א01 חומרה ומערכות הפעלה: שיעור, המרצה: מר מוקטרן מואיד סאלם, ביום ד משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2510א01 חומרה ומערכות הפעלה: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר מוקטרן מואיד סאלם, ביום ד משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-104">
+      <input type="checkbox" id="course-104" name="courses" value="סמסטר ב, שם הקורס: 214.2510א02 חומרה ומערכות הפעלה: תרגיל, ביום ד משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2510א02 חומרה ומערכות הפעלה: <span class="exercise-type">תרגיל</span>, ביום ד משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-105">
+      <input type="checkbox" id="course-105" name="courses" value="סמסטר ב, שם הקורס: 214.2700ב01 ניתוח מערכות מידע: שיעור, המרצה: דר אוטמזגין נסים, ביום ג משעה 14 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2700ב01 ניתוח מערכות מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר אוטמזגין נסים, ביום ג משעה 14 עד שעה 18</span>
+    </label>
+<label class="course" for="course-106">
+      <input type="checkbox" id="course-106" name="courses" value="סמסטר ב, שם הקורס: 214.2700ב02 ניתוח מערכות מידע: תרגיל, ביום ג משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2700ב02 ניתוח מערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ג משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-107">
+      <input type="checkbox" id="course-107" name="courses" value="סמסטר ב, שם הקורס: 214.2700ב03 ניתוח מערכות מידע: תרגיל, ביום ג משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2700ב03 ניתוח מערכות מידע: <span class="exercise-type">תרגיל</span>, ביום ג משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-108">
+      <input type="checkbox" id="course-108" name="courses" value="סמסטר ב, שם הקורס: 214.2800ב01 מערכות מסדי נתונים: שיעור, המרצה: דר עסאקלה שאדי, ביום ד משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2800ב01 מערכות מסדי נתונים: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר עסאקלה שאדי, ביום ד משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-109">
+      <input type="checkbox" id="course-109" name="courses" value="סמסטר ב, שם הקורס: 214.2800ב02 מערכות מסדי נתונים: תרגיל, ביום ד משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2800ב02 מערכות מסדי נתונים: <span class="exercise-type">תרגיל</span>, ביום ד משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-110">
+      <input type="checkbox" id="course-110" name="courses" value="סמסטר ב, שם הקורס: 214.2800ב03 מערכות מסדי נתונים: תרגיל, ביום ד משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2800ב03 מערכות מסדי נתונים: <span class="exercise-type">תרגיל</span>, ביום ד משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-111">
+      <input type="checkbox" id="course-111" name="courses" value="סמסטר ב, שם הקורס: 214.2990ב01 מבני נתונים ואלגוריתמים: שיעור, המרצה: דר רשקוביץ רמי, ביום ב משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2990ב01 מבני נתונים ואלגוריתמים: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר רשקוביץ רמי, ביום ב משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-112">
+      <input type="checkbox" id="course-112" name="courses" value="סמסטר ב, שם הקורס: 214.2990ב02 מבני נתונים ואלגוריתמים: תרגיל, ביום ב משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.2990ב02 מבני נתונים ואלגוריתמים: <span class="exercise-type">תרגיל</span>, ביום ב משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-113">
+      <input type="checkbox" id="course-113" name="courses" value="סמסטר ב, שם הקורס: 214.3031ב01 Data science lab, המרצה: דר סומך יהודית, ביום א משעה 12 עד שעה 16">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3031ב01 Data science lab, <span class="lecturer-label">המרצה:</span> דר סומך יהודית, ביום א משעה 12 עד שעה 16</span>
+    </label>
+<label class="course" for="course-114">
+      <input type="checkbox" id="course-114" name="courses" value="סמסטר ב, שם הקורס: 214.3112ב01 למידת מכונה-שיעור, המרצה: פרופ&#x27; שמשוני אילן, ביום ה משעה 14 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3112ב01 למידת מכונה-<span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> פרופ&#x27; שמשוני אילן, ביום ה משעה 14 עד שעה 18</span>
+    </label>
+<label class="course" for="course-115">
+      <input type="checkbox" id="course-115" name="courses" value="סמסטר ב, שם הקורס: 214.3112ב02 למידת מכונה-תרגיל, ביום ה משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3112ב02 למידת מכונה-<span class="exercise-type">תרגיל</span>, ביום ה משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-116">
+      <input type="checkbox" id="course-116" name="courses" value="סמסטר ב, שם הקורס: 214.3112ב03 למידת מכונה-תרגיל, ביום ה משעה 18 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3112ב03 למידת מכונה-<span class="exercise-type">תרגיל</span>, ביום ה משעה 18 עד שעה 20</span>
+    </label>
+<label class="course" for="course-117">
+      <input type="checkbox" id="course-117" name="courses" value="סמסטר ב, שם הקורס: 214.3140ב01 עיצוב חוויית שימוש לפרטיות ואבטחת מידע, המרצה: דר אילון אשרת, ביום א משעה 09 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3140ב01 עיצוב חוויית שימוש לפרטיות ואבטחת מידע, <span class="lecturer-label">המרצה:</span> דר אילון אשרת, ביום א משעה 09 עד שעה 12</span>
+    </label>
+<label class="course" for="course-118">
+      <input type="checkbox" id="course-118" name="courses" value="סמסטר ב, שם הקורס: 214.3150ב01 מודלים סטטיסטיים למדעי הנתונים-שיעור, המרצה: דר דרור רותם, ביום ה משעה 10 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3150ב01 מודלים סטטיסטיים למדעי הנתונים-<span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר דרור רותם, ביום ה משעה 10 עד שעה 14</span>
+    </label>
+<label class="course" for="course-119">
+      <input type="checkbox" id="course-119" name="courses" value="סמסטר ב, שם הקורס: 214.3150ב02 מודלים סטטיסטיים למדעי הנתונים- תרגיל, ביום ה משעה 08 עד שעה 10">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3150ב02 מודלים סטטיסטיים למדעי הנתונים- <span class="exercise-type">תרגיל</span>, ביום ה משעה 08 עד שעה 10</span>
+    </label>
+<label class="course" for="course-120">
+      <input type="checkbox" id="course-120" name="courses" value="סמסטר ב, שם הקורס: 214.3200ב01 אינטגרציה ויישום מע&#x27; מידע ארגוניות (ERP), המרצה: מר פוגל אריה, ביום ב משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3200ב01 אינטגרציה ויישום מע&#x27; מידע ארגוניות (ERP), <span class="lecturer-label">המרצה:</span> מר פוגל אריה, ביום ב משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-121">
+      <input type="checkbox" id="course-121" name="courses" value="סמסטר ב, שם הקורס: 214.3500ב01 סמינר: הנדסת תוכנה בעידן ה-AI, המרצה: פרופ&#x27; ריינהרץ-ברגר איריס, ביום ג משעה 12 עד שעה 16">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3500ב01 סמינר: הנדסת תוכנה בעידן ה-AI, <span class="lecturer-label">המרצה:</span> פרופ&#x27; ריינהרץ-ברגר איריס, ביום ג משעה 12 עד שעה 16</span>
+    </label>
+<label class="course" for="course-122">
+      <input type="checkbox" id="course-122" name="courses" value="סמסטר ב, שם הקורס: 214.3650ב01 ויזואליזציה של מידע: שיעור, המרצה: פרופ&#x27; לניר יואל, ביום ב משעה 12 עד שעה 16">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3650ב01 ויזואליזציה של מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> פרופ&#x27; לניר יואל, ביום ב משעה 12 עד שעה 16</span>
+    </label>
+<label class="course" for="course-123">
+      <input type="checkbox" id="course-123" name="courses" value="סמסטר ב, שם הקורס: 214.3680ב01 טכנולוגיית בלוק&#x27;צאין במערכות סייבר-סמינר, המרצה: מר ברגר ארטיום, ביום א משעה 16 עד שעה 20">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3680ב01 טכנולוגיית בלוק&#x27;צאין במערכות סייבר-סמינר, <span class="lecturer-label">המרצה:</span> מר ברגר ארטיום, ביום א משעה 16 עד שעה 20</span>
+    </label>
+<label class="course" for="course-124">
+      <input type="checkbox" id="course-124" name="courses" value="סמסטר ב, שם הקורס: 214.3703ב01 תכן ומימוש אפליקציות אנדרואיד-שיעור, המרצה: דר בדארנה מוראד, ביום ב משעה 08 עד שעה 11">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3703ב01 תכן ומימוש אפליקציות אנדרואיד-<span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר בדארנה מוראד, ביום ב משעה 08 עד שעה 11</span>
+    </label>
+<label class="course" for="course-125">
+      <input type="checkbox" id="course-125" name="courses" value="סמסטר ב, שם הקורס: 214.3703ב02 תכן ומימוש אפליקציות אנדרואיד-תרגיל, ביום ב משעה 11 עד שעה 13">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3703ב02 תכן ומימוש אפליקציות אנדרואיד-<span class="exercise-type">תרגיל</span>, ביום ב משעה 11 עד שעה 13</span>
+    </label>
+<label class="course" for="course-137">
+      <input type="checkbox" id="course-137" name="courses" value="סמסטר ב, שם הקורס: 214.3704ב01 מבוא ללמידת חיזוקים (Introduction to Reinforcement Learning, המרצה: דר לזבניק טדי, ביום ג משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3704ב01 מבוא ללמידת חיזוקים (Introduction to Reinforcement Learning, <span class="lecturer-label">המרצה:</span> דר לזבניק טדי, ביום ג משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-126">
+      <input type="checkbox" id="course-126" name="courses" value="סמסטר ב, שם הקורס: 214.3810ב01 ממשקי אדם מחשב: שיעור, המרצה: גב&#x27; בוקר אבישג, ביום א משעה 13 עד שעה 16">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3810ב01 ממשקי אדם מחשב: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> גב&#x27; בוקר אבישג, ביום א משעה 13 עד שעה 16</span>
+    </label>
+<label class="course" for="course-127">
+      <input type="checkbox" id="course-127" name="courses" value="סמסטר ב, שם הקורס: 214.3810ב02 ממשקי אדם מחשב: תרגיל, ביום א משעה 16 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3810ב02 ממשקי אדם מחשב: <span class="exercise-type">תרגיל</span>, ביום א משעה 16 עד שעה 18</span>
+    </label>
+<label class="course" for="course-128">
+      <input type="checkbox" id="course-128" name="courses" value="סמסטר ב, שם הקורס: 214.3888ב01 סמינר מחלקתי, ביום ד משעה 12 עד שעה 14">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.3888ב01 סמינר מחלקתי, ביום ד משעה 12 עד שעה 14</span>
+    </label>
+<label class="course" for="course-129">
+      <input type="checkbox" id="course-129" name="courses" value="סמסטר ב, שם הקורס: 214.4001ב01 גישה מחקרית במערכות מידע: סמינר, המרצה: פרופ&#x27; סופר פנינה, ביום ד משעה 14 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.4001ב01 גישה מחקרית במערכות מידע: סמינר, <span class="lecturer-label">המרצה:</span> פרופ&#x27; סופר פנינה, ביום ד משעה 14 עד שעה 18</span>
+    </label>
+<label class="course" for="course-130">
+      <input type="checkbox" id="course-130" name="courses" value="סמסטר ב, שם הקורס: 214.4050ב01 סמינר בלמידה עמוקה לפתרון בעיות בראיה ממ, המרצה: פרופ&#x27; שמשוני אילן, ביום ג משעה 16 עד שעה 19">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.4050ב01 סמינר בלמידה עמוקה לפתרון בעיות בראיה ממ, <span class="lecturer-label">המרצה:</span> פרופ&#x27; שמשוני אילן, ביום ג משעה 16 עד שעה 19</span>
+    </label>
+<label class="course" for="course-131">
+      <input type="checkbox" id="course-131" name="courses" value="סמסטר ב, שם הקורס: 214.4200ב01 שיטות מחקר: סמינר, המרצה: פרופ&#x27; הדר עירית, ביום ד משעה 14 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.4200ב01 שיטות מחקר: סמינר, <span class="lecturer-label">המרצה:</span> פרופ&#x27; הדר עירית, ביום ד משעה 14 עד שעה 18</span>
+    </label>
+<label class="course" for="course-132">
+      <input type="checkbox" id="course-132" name="courses" value="סמסטר ב, שם הקורס: 214.4220ב01 כתיבה מדעית באנגלית: שיעור, המרצה: דר לוריא שרה, ביום ד משעה 18 עד שעה 21">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.4220ב01 כתיבה מדעית באנגלית: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> דר לוריא שרה, ביום ד משעה 18 עד שעה 21</span>
+    </label>
+<label class="course" for="course-135">
+      <input type="checkbox" id="course-135" name="courses" value="סמסטר ב, שם הקורס: 214.4312ב02 Machine learning under uncertainty, המרצה: דר בולאי מריו אנדרה, ביום ד משעה 08 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.4312ב02 Machine learning under uncertainty, <span class="lecturer-label">המרצה:</span> דר בולאי מריו אנדרה, ביום ד משעה 08 עד שעה 12</span>
+    </label>
+<label class="course" for="course-133">
+      <input type="checkbox" id="course-133" name="courses" value="סמסטר ב, שם הקורס: 214.4360א01 יסודות העיצוב הגרפי בעיצוב ממשקים- שיעור, המרצה: מר קפל שחר נח, ביום ד משעה 18 עד שעה 21">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.4360א01 יסודות העיצוב הגרפי בעיצוב ממשקים- <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> מר קפל שחר נח, ביום ד משעה 18 עד שעה 21</span>
+    </label>
+<label class="course" for="course-134">
+      <input type="checkbox" id="course-134" name="courses" value="סמסטר ב, שם הקורס: 214.4600ב01 אסטרטגית ניהול מערכות מידע: שיעור, המרצה: פרופ&#x27; ארזי עפר, ביום ד משעה 09 עד שעה 12">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.4600ב01 אסטרטגית ניהול מערכות מידע: <span class="lecture-type">שיעור</span>, <span class="lecturer-label">המרצה:</span> פרופ&#x27; ארזי עפר, ביום ד משעה 09 עד שעה 12</span>
+    </label>
+<label class="course" for="course-136">
+      <input type="checkbox" id="course-136" name="courses" value="סמסטר ב, שם הקורס: 214.4750ב01 שיטות ויישומים מבוססי למידה עמוקה בעיבוד, המרצה: פרופ&#x27; מינקוב עינת, ביום ה משעה 14 עד שעה 18">
+      <span><span class="semester-text">סמסטר ב</span>, <span class="course-name-label">שם הקורס:</span> 214.4750ב01 שיטות ויישומים מבוססי למידה עמוקה בעיבוד, <span class="lecturer-label">המרצה:</span> פרופ&#x27; מינקוב עינת, ביום ה משעה 14 עד שעה 18</span>
+    </label>
+      </div>
+      <div class="field" style="margin-top: 24px;">
+        <label for="generalNotes">הערות ובקשות:</label>
+        <textarea id="generalNotes" name="generalNotes" class="details-textarea" placeholder="אפשר לכתוב כאן הערות או בקשות נוספות"></textarea>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit">הקליקו בבקשה כאן להכנת מכתב למשלוח בדואל למזכירת לימודי תארים מתקדמים</button>
+      </div>
+      <div id="result" class="letter-box" aria-live="polite">
+        <h2>בבקשה העתיקו ושילחו את המכתב הבא לגב' סיגל בן-סימון <a href="mailto:sbensimon@univ.haifa.ac.il">sbensimon@univ.haifa.ac.il</a></h2>
+        <div id="letterContent" class="letter-content"></div>
+        <div class="letter-actions"><button type="button" id="copyLetter">בבקשה הקליקו על הכפתור הזה בשביל להעתיק את המכתב ל Clipboard ואחרי כן העתיקו להודעת דוא"ל חדשה</button></div>
+      </div>
+    </form>
+  </div>
+</main>
+<script>
+const list = document.getElementById('courseList');
+const boxes = [...document.querySelectorAll('input[name="courses"]')];
+const count = document.getElementById('count');
+const search = document.getElementById('search');
+const result = document.getElementById('result');
+const letterContent = document.getElementById('letterContent');
+
+function updateCount() {
+  const selected = boxes.filter(b => b.checked).length;
+  count.textContent = `נבחרו ${selected} מתוך 137 קורסים`;
+}
+
+search.addEventListener('input', () => {
+  const q = search.value.trim().toLowerCase();
+  document.querySelectorAll('.course').forEach(label => {
+    const text = label.innerText.toLowerCase();
+    label.classList.toggle('hidden', q && !text.includes(q));
+  });
+});
+
+document.getElementById('selectAll').addEventListener('click', () => {
+  boxes.forEach(b => {
+    const label = b.closest('.course');
+    if (!label.classList.contains('hidden')) b.checked = true;
+  });
+  updateCount();
+});
+
+document.getElementById('clearAll').addEventListener('click', () => {
+  boxes.forEach(b => b.checked = false);
+  updateCount();
+  result.style.display = 'none';
+});
+
+boxes.forEach(b => b.addEventListener('change', updateCount));
+
+document.getElementById('courseForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  if (!form.reportValidity()) return;
+
+  const selected = boxes.filter(b => b.checked).map(b => b.value);
+  const getRadio = (name) => {
+    const el = document.querySelector(`input[name="${name}"]:checked`);
+    return el ? el.value : '';
+  };
+
+  const email = document.getElementById('email').value.trim();
+  const advisor = document.getElementById('advisor').value;
+  const idNumber = document.getElementById('idNumber').value.trim();
+  const fullName = document.getElementById('fullName').value.trim();
+  const mobile = document.getElementById('mobile').value.trim();
+  const studyTrack = getRadio('studyTrack');
+  const startYear = getRadio('startYear');
+  const tuitionAdvance = getRadio('tuitionAdvance');
+  const startSemester = getRadio('startSemester');
+  const supplementaryStudent = getRadio('supplementaryStudent');
+  const specialConditions = getRadio('specialConditions');
+  const specialDetails = document.getElementById('specialConditionsDetails').value.trim();
+
+  let coursesText = 'לא נבחרו קורסים.';
+  if (selected.length) {
+    const semesterA = selected.filter(course => course.startsWith('סמסטר א'));
+    const semesterB = selected.filter(course => course.startsWith('סמסטר ב'));
+    const numberedA = semesterA.map((course, i) => `${i + 1}. ${course}`);
+    const numberedB = semesterB.map((course, i) => `${semesterA.length + i + 1}. ${course}`);
+    coursesText = [numberedA.join('\n'), numberedB.join('\n')].filter(Boolean).join('\n\n');
+  }
+
+  const specialText = specialConditions === 'כן'
+    ? `כן\nפירוט תנאי הקבלה: ${specialDetails || 'לא נמסר פירוט'}`
+    : 'לא';
+
+  const letter = `הנושא: ת.ז. ${idNumber} ${fullName}: בקשה לבחירת קורסים ללימוד תואר שני בחוג למערכות מידע בשנת הלימודים תשפ״ז\n\nלכב' גב' סיגל בן-סימון, מזכירת לימודי תארים מתקדמים בחוג למערכות מידע\n\nשלום רב,\n\nלהלן פרטי בקשת הרישום שלי לקורסים בשנת הלימודים תשפ״ז:\n\nשם: ${fullName}\nמספר ת.ז. ${idNumber}\nכתובת דוא״ל: ${email}\nמספר טלפון נייד: ${mobile}\nיועץ/מנחה: ${advisor}\nמסלול לימודים: ${studyTrack}\nשנת הלימודים שבה התחלתי ללמוד: ${startYear}\nסמסטר שבו התחלתי ללמוד: ${startSemester}\nהאם אני תלמיד/ת השלמות: ${supplementaryStudent}\nהאם שילמתי את מקדמת שכר הלימוד לשנה״ל תשפ״ז: ${tuitionAdvance}\nהאם התקבלתי עם תנאי קבלה מיוחדים: ${specialText}\n\nהקורסים שבחרתי ללמוד בשנת תשפ״ז:\n\n${coursesText}\n\nתודה רבה,\n${fullName}, ת.ז. ${idNumber}, טלפון: ${mobile}, ${email}`;
+
+  letterContent.textContent = letter;
+  result.style.display = 'block';
+  result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+document.getElementById('copyLetter').addEventListener('click', async () => {
+  const text = letterContent.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    const btn = document.getElementById('copyLetter');
+    const original = btn.textContent;
+    btn.textContent = 'המכתב הועתק';
+    setTimeout(() => { btn.textContent = original; }, 1800);
+  } catch (err) {
+    const range = document.createRange();
+    range.selectNodeContents(letterContent);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+});
+
+  const specialRadios = document.querySelectorAll('input[name="specialConditions"]');
+  const specialDetails = document.getElementById('specialConditionsDetails');
+  function updateSpecialConditionsRequirement() {
+    const selected = document.querySelector('input[name="specialConditions"]:checked');
+    const isYes = selected && selected.value === 'כן';
+    specialDetails.required = Boolean(isYes);
+    specialDetails.closest('.field').querySelector('label').innerHTML = "אם כן, אנא פרט/י את תנאי הקבלה שנקבעו לך (השתתפות בקורסים וכד'):" + (isYes ? ' <span class="required-mark">*</span>' : '');
+  }
+  specialRadios.forEach(r => r.addEventListener('change', updateSpecialConditionsRequirement));
+  updateSpecialConditionsRequirement();
+
+  const idNumber = document.getElementById('idNumber');
+  idNumber.addEventListener('input', () => { idNumber.value = idNumber.value.replace(/\D/g, '').slice(0, 9); });
+</script>
+</body>
+</html>
