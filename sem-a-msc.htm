@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>סמס' א' לתואר 2</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 20px 48px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #243447;
+  background: #f7f9fc;
+}
+
+.page {
+  max-width: none;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 28px 30px 34px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(25, 55, 90, 0.08);
+}
+
+h1 {
+  margin: 0 0 28px;
+  padding: 0 0 14px;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #1f4e79;
+  font-weight: 700;
+  border-bottom: 3px solid #d9e8f5;
+}
+
+table {
+  width: auto;
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  direction: rtl;
+}
+
+td {
+  border: 0;
+  border-bottom: 1px solid #edf1f5;
+  padding: 8px 10px;
+  vertical-align: top;
+  background: #ffffff;
+  white-space: nowrap;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.bold {
+  font-weight: 700;
+  color: #1f4e79;
+  background: #f1f6fb;
+}
+
+.center { text-align: center; }
+.left { text-align: left; }
+.right { text-align: right; }
+.wrap { white-space: nowrap; }
+
+a {
+  color: #2f6fa5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 16px 8px 28px;
+  }
+
+  .page {
+    padding: 20px 14px 24px;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  td {
+    padding: 7px 6px;
+    font-size: 14px;
+  }
+}
+
+/* כותרות פנימיות של קבוצות קורסים */
+.section-title {
+  text-align: center !important;
+  font-weight: 700;
+  color: #1f4e79;
+  background: #eaf2f9 !important;
+  border-top: 1px solid #d7e4ef;
+  border-bottom: 1px solid #d7e4ef;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* שלושת מסלולי הלימוד בראש הקובץ */
+.track-info {
+  position: relative;
+  padding: 9px 34px 9px 12px !important;
+  background: #f8fbfe !important;
+  border-bottom: 1px solid #e4edf5 !important;
+  font-weight: 600;
+  color: #334e68;
+}
+
+.track-info::before {
+  content: "◀";
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  color: #5d86aa;
+  font-size: 12px;
+}
+
+/* שורת הקישור לקטלוג נשארת נפרדת אך רגועה */
+.catalog-note {
+  background: #f3f7fb !important;
+  color: #355b7b !important;
+}
+</style>
+</head>
+<body>
+<div class="page">
+<h1>קורסים בסמסטר א' בתכנית הלימודים לתואר שני בחוג למערכות מידע בשנת הלימודים תשפ"ז</h1>
+<table>
+<tr>
+<td class="right wrap track-info" colspan="4">מסלול עם תזה, חובה להשלים 20 שש"ס (בשנתיים) קורסי בחירה: רמה 4, לפחות 12 שש"ס קורסים + רמה 3, עד 8 שש"ס.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right wrap track-info" colspan="4">מסלול התמחות באינטראקציית אדם מחשב, חובה להשלים 11 שש"ס (בשנתיים) קורסי בחירה: רמה 4, לפחות 7 שש"ס. רמה 3 (שלא נלמדו במסגרת התואר הראשון): עד 4 שש"ס</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right wrap track-info" colspan="4">מסלול ללא תזה, חובה להשלים 36 שש"ס (בשנתיים) קורסי בחירה: רמה 4 לפחות 24 שש"ס. רמה 3 (שלא נלמדו במסגרת התואר הראשון): עד 12 שש"ס.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="bold right catalog-note" colspan="4">לו"ז וקורסי קדם ניתן לבדוק בקטלוג הקורסים<a href="https://studapps.haifa.ac.il/catalog/#/courses">https: //studapps.haifa.ac.il/catalog/#/courses</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="section-title" colspan="2">קורסי חובה: סמס' א' תשפ"ז</td>
+<td class="bold">שש"ס</td>
+<td class="bold">למי מיועד?</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.3888</td>
+<td>סמינר מחלקתי</td>
+<td>0</td>
+<td>כל המסלולים: חובה לצבור 20 מפגשים בשנתיים</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4120</td>
+<td>תכנון אתי בצוותי Human AI: שיעור</td>
+<td>4</td>
+<td>חובה במסלול HCI</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4910</td>
+<td>נושאים מתקדמים באינטראקציית אדם מחשב: סמינר</td>
+<td>4</td>
+<td>חובה במסלול HCI</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="section-title" colspan="2">קורסי בחירה למסלול תזה/ללא תזה כללי: רמה 4 ורמה 3</td>
+<td class="bold">שש"ס</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4060</td>
+<td>טכנולוגיית המידע וקיימות: סמינר</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4120</td>
+<td>תכנון אתי בצוותי Human AI: שיעור</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4155</td>
+<td>שיטות במדעי הנתונים ליישומים ביו: רפואיים</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4603</td>
+<td>כריית תהליכים עסקיים: סמינר</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4704</td>
+<td>מבוא ללמידת חיזוקים</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4710</td>
+<td>מחשוב מקיף: סמינר</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4740</td>
+<td>שקיפות אלגוריתמית: סמינר</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4860</td>
+<td>ממשקים לא מילוליים: סמינר</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4910</td>
+<td>נושאים מתקדמים באינטראקציית אדם מחשב: סמינר</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4970</td>
+<td>עיבוד שפה טבעית</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>203.3770</td>
+<td>למידה ממוכנת</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.3010</td>
+<td>פרטיות ואתיקה של מידע: שיעור</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.3180</td>
+<td>קוגניציה ומניפולציה ברשתות: סמינר</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.3700</td>
+<td>אחזור מידע: שיעור</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.3895</td>
+<td>מערכות המלצה מבוססות בינה מלאכותית</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="section-title" colspan="2">קורסי בחירה עבור התמחות HCI</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.4060</td>
+<td>טכנולוגיית המידע וקיימות: סמינר</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4710</td>
+<td>מחשוב מקיף: סמינר</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4740</td>
+<td>שקיפות אלגוריתמית: סמינר</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.4860</td>
+<td>ממשקים לא מילוליים: סמינר</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.3010</td>
+<td>פרטיות ואתיקה של מידע: שיעור</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>214.3180</td>
+<td>קוגניציה ומניפולציה ברשתות: סמינר</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.3700</td>
+<td>אחזור מידע: שיעור</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.3895</td>
+<td>מערכות המלצה מבוססות בינה מלאכותית</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="section-title" colspan="2">קורסי השלמה</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td class="right">214.1505</td>
+<td>מתמטיקה דיסקרטית ולוגיקה: שיעור</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.1900</td>
+<td>מבוא למחשבים ותיכנות: שיעור</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.1960</td>
+<td>תכנות מונחה עצמים: שיעור</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.2200</td>
+<td>תכן ופיתוח של מערכות מידע: שיעור</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="right">214.2990</td>
+<td>מבני נתונים ואלגוריתמים: שיעור</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
