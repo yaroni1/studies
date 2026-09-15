@@ -549,11 +549,11 @@
       const emailSubject = `ת.ז ${studentId} ${studentName}: פניה לוועדת לימודי תואר ראשון בחוג למערכות מידע`;
 
       generatedText =
-`שורת נושא לדוא"ל:
-${emailSubject}
-
-לכב' ועדת תואר ראשון בחוג למערכות מידע
+`לכב' ועדת תואר ראשון בחוג למערכות מידע
 כתובות דוא"ל: skradsh1@univ.haifa.ac.il, oforman@univ.haifa.ac.il
+
+שורת נושא לדוא"ל:
+${emailSubject}
 
 שלום רב,
 
@@ -583,10 +583,10 @@ ${importantText}
         .replace(/>/g, '&gt;');
 
       emailPreview.innerHTML =
-`<span class="email-subject"><span class="subject-label">שורת נושא לדוא"ל</span>${safe(emailSubject)}</span>
-לכב' ועדת תואר ראשון בחוג למערכות מידע
+`לכב' ועדת תואר ראשון בחוג למערכות מידע
 כתובות דוא"ל: skradsh1@univ.haifa.ac.il, oforman@univ.haifa.ac.il
 
+<span class="email-subject"><span class="subject-label">שורת נושא לדוא"ל</span>${safe(emailSubject)}</span>
 שלום רב,
 
 אבקש לפנות לוועדת לימודי תואר ראשון בחוג למערכות מידע.
