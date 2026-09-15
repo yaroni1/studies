@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>פנייה לוועדת לימודי תואר ראשון בחוג למערכות מידע</title>
+  <style>
+    :root {
+      --primary: #0b4f7c;
+      --primary-dark: #083b5d;
+      --primary-soft: #eef6fb;
+      --border: #cdd9e2;
+      --text: #1f2933;
+      --muted: #5f6c76;
+      --danger: #a61b1b;
+      --danger-bg: #fff4f4;
+      --danger-border: #d94a4a;
+      --success: #176b3a;
+      --success-bg: #effaf3;
+      --surface: #ffffff;
+      --page: #f4f7f9;
+      --shadow: 0 8px 26px rgba(12, 52, 75, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: Arial, "Noto Sans Hebrew", sans-serif;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: min(940px, calc(100% - 28px));
+      margin: 34px auto 56px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid #dce5eb;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .header {
+      padding: 28px 32px 22px;
+      border-top: 7px solid var(--primary);
+      border-bottom: 1px solid #e5edf2;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      color: var(--primary-dark);
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      line-height: 1.25;
+    }
+
+    .intro {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .content {
+      padding: 28px 32px 34px;
+    }
+
+    .notice {
+      border: 2px solid var(--danger-border);
+      background: var(--danger-bg);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 0 0 28px;
+      text-align: center;
+    }
+
+    .notice strong {
+      display: block;
+      color: var(--danger);
+      font-size: 1.35rem;
+      margin-bottom: 4px;
+    }
+
+    .notice p {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.08rem;
+    }
+
+    .must-word {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    .section-title {
+      margin: 28px 0 16px;
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+      border-bottom: 2px solid var(--primary-soft);
+      padding-bottom: 7px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 22px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label, legend {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: #243746;
+    }
+
+    .required {
+      color: var(--danger);
+      margin-right: 3px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      padding: 11px 12px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(11, 79, 124, .12);
+    }
+
+    .hint {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 13px;
+      cursor: pointer;
+      background: #fff;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .radio-option:has(input:checked) {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .radio-option input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      margin: 0;
+    }
+
+    .hidden { display: none; }
+
+    .actions {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .primary-btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .primary-btn:hover { background: var(--primary-dark); }
+
+    .secondary-btn {
+      background: #e9f0f4;
+      color: var(--primary-dark);
+    }
+
+    .secondary-btn:hover { background: #dce8ef; }
+
+    .error-box {
+      display: none;
+      margin: 0 0 18px;
+      padding: 12px 14px;
+      border: 1px solid #e2a2a2;
+      border-radius: 8px;
+      background: #fff6f6;
+      color: #8b1717;
+      font-weight: 700;
+    }
+
+    .result {
+      display: none;
+      margin-top: 30px;
+      border-top: 2px solid #e4edf2;
+      padding-top: 26px;
+    }
+
+    .result h2 {
+      margin: 0 0 14px;
+      color: var(--primary-dark);
+      font-size: 1.35rem;
+    }
+
+    .email-preview {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fbfdfe;
+      padding: 18px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.75;
+    }
+
+    .email-preview .email-important {
+      display: block;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border: 2px solid var(--danger-border);
+      background: var(--danger-bg);
+      color: var(--danger);
+      font-weight: 800;
+      text-align: center;
+      border-radius: 8px;
+      white-space: normal;
+    }
+
+    .copy-status {
+      min-height: 1.4em;
+      margin-top: 8px;
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .invalid {
+      border-color: var(--danger) !important;
+      box-shadow: 0 0 0 3px rgba(166, 27, 27, .08) !important;
+    }
+
+    @media (max-width: 680px) {
+      .page { margin-top: 14px; width: min(100% - 16px, 940px); }
+      .header, .content { padding-right: 20px; padding-left: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .radio-group { flex-direction: column; }
+      .radio-option { width: 100%; }
+      .actions button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <header class="header">
+        <h1>פנייה לוועדת לימודי תואר ראשון בחוג למערכות מידע</h1>
+        <p class="intro">נא למלא את כל השדות. לאחר מילוי הטופס ניתן ליצור נוסח מסודר לפנייה בדוא״ל ולהעתיק אותו.</p>
+      </header>
+
+      <div class="content">
+        <div class="notice" role="note" aria-label="הודעה חשובה">
+          <strong>חשוב מאוד</strong>
+          <p><span class="must-word">חובה</span> לצרף לפנייה גיליון ציונים עדכני.<br>במידת הצורך יש לצרף גם מסמכים נוספים התומכים בבקשה.</p>
+        </div>
+
+        <div id="errorBox" class="error-box" role="alert"></div>
+
+        <form id="requestForm" novalidate>
+          <h2 class="section-title">פרטי הסטודנט</h2>
+
+          <div class="grid">
+            <div class="field">
+              <label for="studentId">תעודת זהות <span class="required">*</span></label>
+              <input id="studentId" name="studentId" type="text" inputmode="numeric" maxlength="9" autocomplete="off" required aria-describedby="idHint">
+              <span id="idHint" class="hint">יש להזין 9 ספרות</span>
+            </div>
+
+            <div class="field">
+              <label for="studentName">שם הסטודנט <span class="required">*</span></label>
+              <input id="studentName" name="studentName" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">מספר טלפון <span class="required">*</span></label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+            </div>
+
+            <div class="field">
+              <label for="email">כתובת דוא״ל <span class="required">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <h2 class="section-title">פרטי הבקשה</h2>
+
+          <div class="grid">
+            <div class="field full">
+              <fieldset>
+                <legend>נושא הבקשה <span class="required">*</span></legend>
+                <div class="radio-group">
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="אישור לקורס חוזר" required>
+                    <span>אישור לקורס חוזר</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="אישור להזדמנות שנייה" required>
+                    <span>אישור להזדמנות שנייה</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="אחר" required>
+                    <span>אחר</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div id="otherTopicField" class="field full hidden">
+              <label for="otherTopic">פירוט נושא הבקשה <span class="required">*</span></label>
+              <input id="otherTopic" name="otherTopic" type="text">
+            </div>
+
+            <div class="field full">
+              <label for="reason">נימוק לבקשה <span class="required">*</span></label>
+              <textarea id="reason" name="reason" required></textarea>
+            </div>
+          </div>
+
+          <div class="notice" style="margin-top: 28px; margin-bottom: 0;">
+            <strong>חשוב מאוד</strong>
+            <p><span class="must-word">חובה</span> לצרף לפנייה גיליון ציונים עדכני.<br>במידת הצורך יש לצרף גם מסמכים נוספים התומכים בבקשה.</p>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="primary-btn">יצירת נוסח לפנייה בדוא״ל</button>
+          </div>
+        </form>
+
+        <section id="result" class="result" aria-live="polite">
+          <h2>נוסח הפנייה לדוא״ל</h2>
+          <div id="emailPreview" class="email-preview"></div>
+          <div class="actions">
+            <button id="copyButton" type="button" class="primary-btn">העתקת נוסח הפנייה</button>
+          </div>
+          <div id="copyStatus" class="copy-status"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('requestForm');
+    const otherTopicField = document.getElementById('otherTopicField');
+    const otherTopic = document.getElementById('otherTopic');
+    const errorBox = document.getElementById('errorBox');
+    const result = document.getElementById('result');
+    const emailPreview = document.getElementById('emailPreview');
+    const copyButton = document.getElementById('copyButton');
+    const copyStatus = document.getElementById('copyStatus');
+
+    let generatedText = '';
+
+    function clean(value) {
+      return value.trim().replace(/\s+/g, ' ');
+    }
+
+    function isValidIsraeliId(value) {
+      const id = value.replace(/\D/g, '');
+      if (id.length !== 9) return false;
+      let sum = 0;
+      for (let i = 0; i < 9; i++) {
+        let num = Number(id[i]) * ((i % 2) + 1);
+        if (num > 9) num -= 9;
+        sum += num;
+      }
+      return sum % 10 === 0;
+    }
+
+    function isValidPhone(value) {
+      const normalized = value.replace(/[\s().-]/g, '');
+      return /^(?:\+972|0)\d{8,9}$/.test(normalized);
+    }
+
+    function clearInvalidStyles() {
+      form.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+    }
+
+    function showErrors(messages, firstElement) {
+      errorBox.innerHTML = messages.join('<br>');
+      errorBox.style.display = 'block';
+      if (firstElement) {
+        firstElement.classList.add('invalid');
+        firstElement.focus({ preventScroll: true });
+      }
+      errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function hideErrors() {
+      errorBox.style.display = 'none';
+      errorBox.textContent = '';
+    }
+
+    document.querySelectorAll('input[name="requestTopic"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const isOther = radio.checked && radio.value === 'אחר';
+        const selected = document.querySelector('input[name="requestTopic"]:checked');
+        const shouldShow = selected && selected.value === 'אחר';
+        otherTopicField.classList.toggle('hidden', !shouldShow);
+        otherTopic.required = shouldShow;
+        if (!shouldShow) otherTopic.value = '';
+      });
+    });
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      clearInvalidStyles();
+      hideErrors();
+      copyStatus.textContent = '';
+
+      const studentId = clean(document.getElementById('studentId').value);
+      const studentName = clean(document.getElementById('studentName').value);
+      const phone = clean(document.getElementById('phone').value);
+      const email = clean(document.getElementById('email').value);
+      const reason = document.getElementById('reason').value.trim();
+      const selectedTopic = document.querySelector('input[name="requestTopic"]:checked');
+
+      const errors = [];
+      let firstInvalid = null;
+
+      function addError(message, element) {
+        errors.push(message);
+        if (!firstInvalid) firstInvalid = element;
+        if (element) element.classList.add('invalid');
+      }
+
+      if (!studentId) {
+        addError('יש למלא תעודת זהות.', document.getElementById('studentId'));
+      } else if (!/^\d{9}$/.test(studentId)) {
+        addError('תעודת הזהות חייבת לכלול 9 ספרות.', document.getElementById('studentId'));
+      } else if (!isValidIsraeliId(studentId)) {
+        addError('מספר תעודת הזהות אינו תקין.', document.getElementById('studentId'));
+      }
+
+      if (!studentName) addError('יש למלא את שם הסטודנט.', document.getElementById('studentName'));
+
+      if (!phone) {
+        addError('יש למלא מספר טלפון.', document.getElementById('phone'));
+      } else if (!isValidPhone(phone)) {
+        addError('מספר הטלפון אינו בפורמט תקין.', document.getElementById('phone'));
+      }
+
+      const emailInput = document.getElementById('email');
+      if (!email) {
+        addError('יש למלא כתובת דוא״ל.', emailInput);
+      } else if (!emailInput.checkValidity()) {
+        addError('כתובת הדוא״ל אינה תקינה.', emailInput);
+      }
+
+      if (!selectedTopic) {
+        errors.push('יש לבחור נושא לבקשה.');
+        if (!firstInvalid) firstInvalid = document.querySelector('input[name="requestTopic"]');
+      }
+
+      let topicText = selectedTopic ? selectedTopic.value : '';
+      if (selectedTopic && selectedTopic.value === 'אחר') {
+        const other = clean(otherTopic.value);
+        if (!other) {
+          addError('יש לפרט את נושא הבקשה.', otherTopic);
+        } else {
+          topicText = other;
+        }
+      }
+
+      if (!reason) addError('יש למלא נימוק לבקשה.', document.getElementById('reason'));
+
+      if (errors.length) {
+        showErrors(errors, firstInvalid);
+        result.style.display = 'none';
+        return;
+      }
+
+      const importantText = 'חובה לצרף לפנייה גיליון ציונים עדכני.\nבמידת הצורך יש לצרף גם מסמכים נוספים התומכים בבקשה.';
+
+      generatedText =
+`לכב' ועדת תואר ראשון בחוג למערכות מידע
+כתובות דוא"ל: skradsh1@univ.haifa.ac.il, oforman@univ.haifa.ac.il
+
+שלום רב,
+
+אבקש לפנות לוועדת לימודי תואר ראשון בחוג למערכות מידע.
+
+שם הסטודנט: ${studentName}
+תעודת זהות: ${studentId}
+מספר טלפון: ${phone}
+כתובת דוא״ל: ${email}
+נושא הבקשה: ${topicText}
+
+נימוק לבקשה:
+${reason}
+
+${importantText}
+
+תודה רבה.`;
+
+      const safeReason = reason
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      const safe = value => value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      emailPreview.innerHTML =
+`לכב' ועדת תואר ראשון בחוג למערכות מידע
+כתובות דוא"ל: skradsh1@univ.haifa.ac.il, oforman@univ.haifa.ac.il
+
+שלום רב,
+
+אבקש לפנות לוועדת לימודי תואר ראשון בחוג למערכות מידע.
+
+שם הסטודנט: ${safe(studentName)}
+תעודת זהות: ${safe(studentId)}
+מספר טלפון: ${safe(phone)}
+כתובת דוא״ל: ${safe(email)}
+נושא הבקשה: ${safe(topicText)}
+
+נימוק לבקשה:
+${safeReason}
+
+<span class="email-important"><span class="must-word">חובה</span> לצרף לפנייה גיליון ציונים עדכני.<br>במידת הצורך יש לצרף גם מסמכים נוספים התומכים בבקשה.</span>
+
+תודה רבה.`;
+
+      result.style.display = 'block';
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    copyButton.addEventListener('click', async () => {
+      if (!generatedText) return;
+      try {
+        await navigator.clipboard.writeText(generatedText);
+        copyStatus.textContent = 'נוסח הפנייה הועתק בהצלחה.';
+      } catch (error) {
+        const temp = document.createElement('textarea');
+        temp.value = generatedText;
+        temp.setAttribute('readonly', '');
+        temp.style.position = 'fixed';
+        temp.style.opacity = '0';
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+        copyStatus.textContent = 'נוסח הפנייה הועתק בהצלחה.';
+      }
+    });
+  </script>
+</body>
+</html>
