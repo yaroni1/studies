@@ -365,12 +365,60 @@
                 <legend>נושא הבקשה <span class="required">*</span></legend>
                 <div class="radio-group">
                   <label class="radio-option">
-                    <input type="radio" name="requestTopic" value="אישור לקורס חוזר" required>
-                    <span>אישור לקורס חוזר</span>
+                    <input type="radio" name="requestTopic" value="הכרה בקורסים ממוסד אחר" required>
+                    <span>הכרה בקורסים ממוסד אחר <small>(יש לצרף סילבוסים רלוונטיים וגיליון ציונים)</small></span>
                   </label>
                   <label class="radio-option">
-                    <input type="radio" name="requestTopic" value="אישור להזדמנות שניה" required>
-                    <span>אישור להזדמנות שניה</span>
+                    <input type="radio" name="requestTopic" value="הכרה בקורסים מאוניברסיטת חיפה מחוג אחר" required>
+                    <span>הכרה בקורסים מאוניברסיטת חיפה מחוג אחר</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="נושאים הקשורים למילואים" required>
+                    <span>נושאים הקשורים למילואים</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="אישור חריג למועד ג" required>
+                    <span>אישור חריג למועד ג <small>(יש לצרף אישורים מתאימים אם יש)</small></span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="אישור חריג להרשמה לקורס לאחר שני כשלונות" required>
+                    <span>אישור חריג להרשמה לקורס לאחר שני כשלונות</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="קבלה ומעבר לתואר ממוסד אחר" required>
+                    <span>קבלה ומעבר לתואר ממוסד אחר</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="מעבר מסלולים בתואר" required>
+                    <span>מעבר מסלולים בתואר</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="מצב אקדמי לא תקין/החרגה לפני הפסקת לימודים" required>
+                    <span>מצב אקדמי לא תקין/החרגה לפני הפסקת לימודים</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="החרגות מעבר לשלב ג" required>
+                    <span>החרגות מעבר לשלב ג</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="חריגה מתוכנית הלימודים" required>
+                    <span>חריגה מתוכנית הלימודים</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="אישור לימוד קורס שלא בחוג או בתוכנית הלימודים" required>
+                    <span>אישור לימוד קורס שלא בחוג או בתוכנית הלימודים</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="לידה" required>
+                    <span>לידה</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="מחלה/פציעה" required>
+                    <span>מחלה/פציעה</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="requestTopic" value="יעוץ פריסת תואר" required>
+                    <span>יעוץ פריסת תואר</span>
                   </label>
                   <label class="radio-option">
                     <input type="radio" name="requestTopic" value="אחר" required>
@@ -550,7 +598,9 @@
 
       generatedText =
 `לכב' ועדת תואר ראשון בחוג למערכות מידע
-כתובות דוא"ל: skradsh1@univ.haifa.ac.il, oforman@univ.haifa.ac.il
+כתובות דוא"ל:
+skradsh1@univ.haifa.ac.il
+oforman@univ.haifa.ac.il
 
 שורת נושא לדוא"ל:
 ${emailSubject}
@@ -584,14 +634,16 @@ ${importantText}
 
       emailPreview.innerHTML =
 `לכב' ועדת תואר ראשון בחוג למערכות מידע
-כתובות דוא"ל: skradsh1@univ.haifa.ac.il, oforman@univ.haifa.ac.il
+כתובות דוא"ל:
+skradsh1@univ.haifa.ac.il
+oforman@univ.haifa.ac.il
 
 <span class="email-subject"><span class="subject-label">שורת נושא לדוא"ל</span>${safe(emailSubject)}</span>
 שלום רב,
 
 אבקש לפנות לוועדת לימודי תואר ראשון בחוג למערכות מידע.
 
-שם הסטודנט: ${safe(studentName)}
+שם הסטודנט/ית: ${safe(studentName)}
 תעודת זהות: ${safe(studentId)}
 מספר טלפון: ${safe(phone)}
 כתובת דוא״ל: ${safe(email)}
